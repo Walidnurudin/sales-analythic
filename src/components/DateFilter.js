@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const DateFilter = ({ startDate, endDate, onChange, onApply }) => {
     return (
-        <div className='flex'>
+        <div className='flex items-center'>
             <DatePicker
                 selectsRange={true}
                 startDate={startDate}

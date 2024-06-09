@@ -10,6 +10,8 @@ import {
     Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { getDayOfWeek } from '../utils/date';
+import { groupingArray, groupingDate } from '../utils/grouping';
 
 ChartJS.register(
     CategoryScale,
@@ -28,34 +30,31 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Chart.js Bar Chart',
+            text: 'Daily sales trends',
         },
     },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const SalesChart = ({ dataSales = [], isLoading }) => {
+    const newDataSales = groupingArray(dataSales)
+    const newDate = groupingDate(dataSales)
 
-export const data = {
-    labels,
-    datasets: [
-        {
-            label: 'Dataset 1',
-            data: labels.map(() => Math.random()),
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        },
-        {
-            label: 'Dataset 2',
-            data: labels.map(() => Math.random()),
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        },
-    ],
-};
+    const data = {
+        labels: newDate.map(data => `${data.date} - (${getDayOfWeek(data.date)})`),
+        datasets: newDataSales?.map((data) => {
+            return {
+                label: data[0].product,
+                data: data.map(item => item.sales),
+                backgroundColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`,
+            }
+        }),
+    };
 
-
-const SalesChart = () => {
     return (
-        <div>
-            <Bar data={data} options={options} />
+        <div className='flex justify-center'>
+            {isLoading && <div className="text-center">Loading...</div>}
+
+            {!isLoading && <Bar data={data} options={options} />}
         </div>
     )
 }

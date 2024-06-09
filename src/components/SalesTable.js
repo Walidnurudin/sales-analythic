@@ -2,7 +2,7 @@ import React from 'react'
 
 const SalesTable = ({ data = [], isLoading = false }) => {
     return (
-        <div className="rounded-lg bg-gray-100 p-4 leading-normal">
+        <div className="rounded-lg bg-gray-50 p-4 leading-normal mt-5 flex justify-center">
             <table className="border-collapse">
                 <thead>
                     <tr>
@@ -14,14 +14,14 @@ const SalesTable = ({ data = [], isLoading = false }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {isLoading && <tr><td colSpan="5" classNameName="text-center">Loading...</td></tr>}
+                    {isLoading && <tr><td colSpan="5" className="text-center">Loading...</td></tr>}
 
                     {!isLoading && data.map((item, index) => (
                         <tr key={index}>
-                            <td className="border border-emerald-200 p-2">{item.product}</td>
-                            <td className="border border-emerald-200 p-2">{item.date}</td>
-                            <td className="border border-emerald-200 p-2">{item.sales}</td>
-                            <td className="border border-emerald-200 p-2">{item.revenue}</td>
+                            <td className="border border-blue-600 p-2">{item.product}</td>
+                            <td className="border border-blue-600 p-2">{item.date}</td>
+                            <td className="border border-blue-600 p-2">{item.sales}</td>
+                            <td className="border border-blue-600 p-2">{item.revenue}</td>
                         </tr>
                     ))}
 

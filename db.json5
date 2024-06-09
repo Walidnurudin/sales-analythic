@@ -3,28 +3,56 @@
         {
             "id": 1,
             "product": "Product A",
-            "date": "2023-01-01",
+            "date": "2024-06-01",
             "sales": 150,
             "revenue": 3000
         },
         {
             "id": 2,
             "product": "Product B",
-            "date": "2023-01-02",
+            "date": "2024-06-01",
             "sales": 100,
             "revenue": 2000
         },
         {
             "id": 3,
             "product": "Product C",
-            "date": "2023-01-01",
-            "sales": 150,
+            "date": "2024-06-01",
+            "sales": 300,
             "revenue": 3000
         },
         {
             "id": 4,
-            "product": "Product D",
-            "date": "2023-01-02",
+            "product": "Product A",
+            "date": "2024-06-02",
+            "sales": 120,
+            "revenue": 2000
+        },
+        {
+            "id": 5,
+            "product": "Product B",
+            "date": "2024-06-02",
+            "sales": 180,
+            "revenue": 3000
+        },
+        {
+            "id": 6,
+            "product": "Product C",
+            "date": "2024-06-02",
+            "sales": 100,
+            "revenue": 2000
+        },
+        {
+            "id": 7,
+            "product": "Product A",
+            "date": "2024-06-03",
+            "sales": 150,
+            "revenue": 3000
+        },
+        {
+            "id": 8,
+            "product": "Product B",
+            "date": "2024-06-03",
             "sales": 100,
             "revenue": 2000
         },
